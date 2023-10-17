@@ -1,19 +1,13 @@
-const display = document.getElementById('display');
-const buttons = document.querySelector('.buttons');
+document.getElementById('textForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting and refreshing the page
 
-buttons.addEventListener('click', function(event) {
-    if (event.target.tagName === 'BUTTON') {
-        const buttonValue = event.target.textContent;
-        if (buttonValue === '=') {
-            try {
-                display.value = eval(display.value);
-            } catch (error) {
-                display.value = 'Error';
-            }
-        } else if (buttonValue === 'C') {
-            display.value = '';
-        } else {
-            display.value += buttonValue;
-        }
-    }
+    // Get the input text value
+    const inputText = document.getElementById('inputText').value;
+
+    // Convert 'a' to 'あ'
+    const convertedText = inputText.replace(/a/g, 'あ');
+
+    // Display the converted text
+    const outputDiv = document.getElementById('output');
+    outputDiv.textContent = `Converted Text: ${convertedText}`;
 });
