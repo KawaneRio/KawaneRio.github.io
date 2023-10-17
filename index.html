@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Japanese to Latin Transliterator</title>
+    <title>Japanese Reading Transliterator</title>
 </head>
 <body>
-    <input type="text" id="japaneseInput" placeholder="Enter Japanese text">
+    <form id="transliterationForm">
+        <label for="japaneseInput">Enter Japanese Kana/Kanji:</label>
+        <input type="text" id="japaneseInput" placeholder="ひらがな、カタカナ、or 漢字">
+        <input type="submit" value="Convert">
+    </form>
     <div id="result"></div>
-    <script src="https://cdn.jsdelivr.net/npm/wanakana/bundle/wanakana.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hepburn-romanization/hepburn.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-    
